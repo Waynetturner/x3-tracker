@@ -14,7 +14,7 @@ import { testModeService } from '@/lib/test-mode'
 import { getCurrentCentralISOString } from '@/lib/timezone'
 import { ttsPhaseService } from '@/lib/tts-phrases'
 import ExerciseCard from '@/components/ExerciseCard'
-import CadenceButton from '@/components/CadenceButton'
+import AnimatedCadenceButton from '@/components/AnimatedCadenceButton';
 import { getWorkoutHistoryData } from '@/lib/exercise-history'
 
 // Helper to get local ISO string with timezone offset
@@ -1023,7 +1023,9 @@ export default function HomePage() {
 
   // Cadence Button Component
   const CadenceButtonComponent = (
-    <CadenceButton cadenceActive={cadenceActive} setCadenceActive={setCadenceActive} />
+    <div className="w-full flex justify-center">
+    <AnimatedCadenceButton cadenceActive={cadenceActive} setCadenceActive={setCadenceActive} />
+  </div>
   );
 
   const handleStartExercise = () => {
